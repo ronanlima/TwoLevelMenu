@@ -156,17 +156,48 @@ public class MainActivity extends AppCompatActivity
         searchMoreUsedMenus();
     }
 
+    /**
+     * If you need to get menu in async way, you may use the following code when get the answer from server
+     */
+    private void loadMenuAsync() {
+        /**
+         if (response.isSuccessful()) {
+         menus.clear();
+         menus.addAll(response.body());
+         if (moreUsedMenus != null && !moreUsedMenus.isEmpty()) {
+         insertMoreUsedMenus();
+         int indexMenu = 0;
+         for (Menu mU : moreUsedMenus) {
+         try {
+         iconNewExibitionControl(indexMenu, mU);
+         } catch (ArrayIndexOutOfBoundsException e) {
+         Log.e("DisplayList", e.getMessage());
+         }
+         indexMenu = 0;
+         }
+         }
+         menuAdapter.setMenus(menus);
+         itemMenuAdapter.updateMenuFromServer(menus);
+         if (search != null) {
+         search.setText("");
+         }
+         } else {
+         sendDefaultRetrofitException(response);
+         }
+         */
+    }
+
     public void searchMoreUsedMenus() {
         AppExecutors.getInstance().getDiskIO().execute(new Runnable() {
             @Override
             public void run() {
                 moreUsedMenus = appDatabase.menuDAO().getMoreUsed(ID_USUARIO, LIMIT_MORE_USED_MENUS);
                 if (moreUsedMenus != null && !moreUsedMenus.isEmpty()) {
-                    insereMenusMaisUtilizados();
+                    insertMoreUsedMenus();
                     int indexMenu = 0;
                     for (Menu mU : moreUsedMenus) {
                         try {
-                            controlaExibicaoIconeNovidade(indexMenu, mU);
+                            iconNewExibitionControl(indexMenu, mU);
                         } catch (ArrayIndexOutOfBoundsException e) {
                             Log.e("DisplayList", e.getMessage());
                         }
@@ -184,7 +215,7 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
-    private void insereMenusMaisUtilizados() {
+    private void insertMoreUsedMenus() {
         for (int i = moreUsedMenus.size() - 1; i >= 0; i--) {
             Menu menu = moreUsedMenus.get(i);
             menu.setTipoMenu(Menu.TipoMenu.MENU_FILHO);
@@ -196,12 +227,12 @@ public class MainActivity extends AppCompatActivity
         menus.add(0, m);
     }
 
-    private int controlaExibicaoIconeNovidade(int indexMenu, Menu mU) throws ArrayIndexOutOfBoundsException {
+    private int iconNewExibitionControl(int indexMenu, Menu mU) throws ArrayIndexOutOfBoundsException {
         if (indexMenu == menus.size()) {
             return indexMenu;
         }
         if (menus.get(indexMenu).getItems() == null || menus.get(indexMenu).getItems().isEmpty()) {
-            return controlaExibicaoIconeNovidade(++indexMenu, mU);
+            return iconNewExibitionControl(++indexMenu, mU);
         }
 
         for (Menu m : menus.get(indexMenu).getItems()) {
@@ -209,7 +240,7 @@ public class MainActivity extends AppCompatActivity
                 m.setDataVisualizacao(mU.getDataVisualizacao());
             }
         }
-        return controlaExibicaoIconeNovidade(++indexMenu, mU);
+        return iconNewExibitionControl(++indexMenu, mU);
     }
 
     /**
