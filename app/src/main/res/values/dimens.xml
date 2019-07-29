@@ -5,4 +5,13 @@
     <dimen name="nav_header_vertical_spacing">8dp</dimen>
     <dimen name="nav_header_height">176dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="padding_left">16dp</dimen>
+    <dimen name="padding_start">@dimen/padding_left</dimen>
+    <dimen name="padding_right">16dp</dimen>
+    <dimen name="padding_end">@dimen/padding_right</dimen>
+    <dimen name="padding_top">16dp</dimen>
+    <dimen name="padding_bottom">16dp</dimen>
+    <dimen name="margin_top_tv_into_nav_header">214dp</dimen>
+    <dimen name="margin_top_nav_header">176dp</dimen>
 </resources>

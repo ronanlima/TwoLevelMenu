@@ -13,4 +13,10 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+    <string name="username">Nome e sobrenome</string>
+    <string name="user_nickname">\@nomeSobrenome</string>
+    <string name="search">Buscar</string>
+    <string name="description_user_user">Imagem do usuário</string>
+    <string name="description_menu_conta">Menu da conta</string>
+    <string name="description_item_menu_conta">Submenu da conta</string>
 </resources>

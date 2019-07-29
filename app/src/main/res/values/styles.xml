@@ -17,4 +17,12 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="StylePadding">
+        <item name="android:paddingLeft">@dimen/padding_left</item>
+        <item name="android:paddingStart">@dimen/padding_start</item>
+        <item name="android:paddingRight">@dimen/padding_right</item>
+        <item name="android:paddingEnd">@dimen/padding_end</item>
+        <item name="android:paddingTop">@dimen/padding_top</item>
+        <item name="android:paddingBottom">@dimen/padding_bottom</item>
+    </style>
 </resources>

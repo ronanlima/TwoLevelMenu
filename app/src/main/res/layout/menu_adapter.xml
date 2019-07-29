@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/menu_selector"
+    android:clickable="true"
+    android:contentDescription="@string/description_menu_conta"
+    android:focusable="true">
+
+    <ImageView
+        android:id="@+id/iv_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_lock_power_off" />
+
+    <TextView
+        android:id="@+id/tv_titulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorWhite"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/iv_menu"
+        app:layout_constraintEnd_toStartOf="@+id/iv_detalhe"
+        app:layout_constraintStart_toStartOf="@+id/guideline_icone_esquerda"
+        app:layout_constraintTop_toBottomOf="@+id/iv_menu"
+        tools:text="Conta corrente" />
+
+    <ImageView
+        android:id="@+id/iv_novo"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_titulo"
+        app:layout_constraintEnd_toStartOf="@id/iv_detalhe"
+        app:layout_constraintStart_toEndOf="@id/tv_titulo"
+        app:layout_constraintTop_toBottomOf="@+id/tv_titulo"
+        app:srcCompat="@drawable/badge" />
+
+    <ImageView
+        android:id="@+id/iv_detalhe"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginEnd="8dp"
+        android:importantForAccessibility="no"
+        android:tint="@color/colorAccent"
+        app:layout_constraintBottom_toTopOf="@+id/tv_titulo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_titulo"
+        app:srcCompat="@drawable/icone_seta_direita" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_icone_esquerda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="48dp" />
+
+    <View
+        android:id="@+id/view_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:alpha="0.3"
+        android:background="@drawable/item_menu_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline_icone_esquerda"
+        app:layout_constraintTop_toBottomOf="@+id/tv_titulo" />
+</android.support.constraint.ConstraintLayout>
