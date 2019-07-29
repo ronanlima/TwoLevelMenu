@@ -1,6 +1,7 @@
 package br.com.ronanlima.twolevelmenu;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
@@ -24,10 +26,12 @@ import android.widget.TextView;
 import org.json.JSONException;
 
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.List;
 
 import br.com.ronanlima.twolevelmenu.adapter.ItemMenuAdapter;
 import br.com.ronanlima.twolevelmenu.adapter.MenuAdapter;
+import br.com.ronanlima.twolevelmenu.database.AppDatabase;
 import br.com.ronanlima.twolevelmenu.interfaces.MenuItemClickListener;
 import br.com.ronanlima.twolevelmenu.model.Menu;
 import br.com.ronanlima.twolevelmenu.util.MenuUtil;
@@ -36,6 +40,9 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity
         implements MenuItemClickListener {
+
+    public static final String ID_USUARIO = "idUsuario";
+    public static final int LIMIT_MORE_USED_MENUS = 3; //altere conforme sua necessidade
 
     @BindView(R.id.drawer_layout)
     DrawerLayout drawer;
@@ -58,12 +65,14 @@ public class MainActivity extends AppCompatActivity
     private List<Menu> menus;
     private Menu menuSelecionado;
     private boolean isPrimeiroNivelMenuSelecionado = true;
+    AppDatabase appDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        appDatabase = AppDatabase.getInstance(this);
 
         setSupportActionBar(toolbar);
         menuAdapter = new MenuAdapter(this);
@@ -122,12 +131,59 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onMenuClick(Menu menu) {
-
+        menuSelecionado = menu;
+        resetItemChecked(menu.getItems());
+        changeMargintTopMenuRecyclerView(R.dimen.margin_top_tv_into_nav_header, menu.getTitulo(), View.VISIBLE);
+        isPrimeiroNivelMenuSelecionado = false;
+        itemMenuAdapter.setMenu(menu.getItems());
+        mRecyclerView.setAdapter(itemMenuAdapter);
+        runLayoutAnimation(R.anim.layout_animation_from_right);
     }
 
     @Override
     public void onItemMenuClick(Menu menu) {
+        hideKeyboard();
+        if (menu.getLink() != null
+                && !"".equalsIgnoreCase(menu.getLink())) {
+            Intent i = new Intent(this, SecondActivity.class);
+            Bundle b = new Bundle();
+            b.putString("item_selected", menu.getTitulo());
+            i.putExtras(b);
+            startActivity(i);
+            drawer.closeDrawer(GravityCompat.START);
+            updateClickMenu(menu);
+        }
+    }
 
+    /**
+     * Para cada vez que clicar num MENU_FILHO, grava/altera o registro no banco de dados com a quantidade
+     * de clicks do mesmo.
+     *
+     * @param menu
+     */
+    private void updateClickMenu(final Menu menu) {
+        AppExecutors.getInstance().getDiskIO().execute(new Runnable() {
+            @Override
+            public void run() {
+                String userId = ID_USUARIO;//recupere o id do seu usuário logado
+                menu.setUserId(userId);
+                menu.setDataVisualizacao(Calendar.getInstance().getTime());
+                int qtdClickFromMenu = appDatabase.menuDAO().getQtdClickFromMenu(userId, menu.getIdMenu());
+                menu.setQtdClick(++qtdClickFromMenu);
+                int update = appDatabase.menuDAO().update(menu);
+                if (update == 0) { // registro não existe
+                    appDatabase.menuDAO().insert(menu);
+                }
+            }
+        });
+    }
+
+    private void hideKeyboard() {
+        if (getCurrentFocus() != null) {
+            InputMethodManager inputManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
+                    InputMethodManager.HIDE_NOT_ALWAYS);
+        }
     }
 
     /**
