@@ -1,0 +1,538 @@
+[
+  {
+    "titulo": "Menu I",
+    "items": [
+      {
+        "titulo": "Menuzinho Agrupador",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 11,
+        "tipoMenu": "MENU_MORTO"
+      },
+      {
+        "titulo": "Submenu I",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "2019-07-28 00:00:00.0",
+        "idMenu": -2,
+        "tipoMenu": "MENU_FILHO"
+      },
+      {
+        "titulo": "Submenu II",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 12,
+        "tipoMenu": "MENU_FILHO"
+      },
+      {
+        "titulo": "Submenu III",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 13,
+        "tipoMenu": "MENU_FILHO"
+      },
+      {
+        "titulo": "Menuzinho Agrupador",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 18,
+        "tipoMenu": "MENU_MORTO"
+      },
+      {
+        "titulo": "Submenu I",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 19,
+        "tipoMenu": "MENU_FILHO"
+      },
+      {
+        "titulo": "Submenu II",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 20,
+        "tipoMenu": "MENU_FILHO"
+      },
+      {
+        "titulo": "Menuzinho Agrupador",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 29,
+        "tipoMenu": "MENU_MORTO"
+      },
+      {
+        "titulo": "Submenu I",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 30,
+        "tipoMenu": "MENU_FILHO"
+      },
+      {
+        "titulo": "Submenu II",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 31,
+        "tipoMenu": "MENU_FILHO"
+      },
+      {
+        "titulo": "Submenu III",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 32,
+        "tipoMenu": "MENU_FILHO"
+      }
+    ],
+    "icone": "ic_menu_camera",
+    "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+    "idMenu": 10,
+    "tipoMenu": "MENU_PAI"
+  },
+  {
+    "titulo": "Menu II",
+    "items": [
+      {
+        "titulo": "Menuzinho Agrupador",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 189,
+        "tipoMenu": "MENU_MORTO"
+      },
+      {
+        "titulo": "Submenu I",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 193,
+        "tipoMenu": "MENU_FILHO"
+      },
+      {
+        "titulo": "Menuzinho Agrupador",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 190,
+        "tipoMenu": "MENU_MORTO"
+      },
+      {
+        "titulo": "Submenu I",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 191,
+        "tipoMenu": "MENU_FILHO"
+      },
+      {
+        "titulo": "Submenu II",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 192,
+        "tipoMenu": "MENU_FILHO"
+      }
+    ],
+    "icone": "ic_menu_gallery",
+    "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+    "idMenu": 188,
+    "tipoMenu": "MENU_PAI"
+  },
+  {
+    "titulo": "Menu III",
+    "items": [
+      {
+        "titulo": "Menuzinho Agrupador",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 55,
+        "tipoMenu": "MENU_MORTO"
+      },
+      {
+        "titulo": "Submenu I",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 56,
+        "tipoMenu": "MENU_FILHO"
+      },
+      {
+        "titulo": "Menuzinho Agrupador",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 61,
+        "tipoMenu": "MENU_MORTO"
+      },
+      {
+        "titulo": "Submenu I",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 62,
+        "tipoMenu": "MENU_FILHO"
+      },
+      {
+        "titulo": "Submenu II",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 63,
+        "tipoMenu": "MENU_FILHO"
+      },
+      {
+        "titulo": "Menuzinho Agrupador",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 119,
+        "tipoMenu": "MENU_MORTO"
+      },
+      {
+        "titulo": "Submenu I",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 212,
+        "tipoMenu": "MENU_FILHO"
+      },
+      {
+        "titulo": "Menuzinho Agrupador",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 153,
+        "tipoMenu": "MENU_MORTO"
+      },
+      {
+        "titulo": "Submenu I",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 154,
+        "tipoMenu": "MENU_FILHO"
+      }
+    ],
+    "icone": "ic_menu_manage",
+    "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+    "idMenu": 54,
+    "tipoMenu": "MENU_PAI"
+  },
+  {
+    "titulo": "Menu IV",
+    "items": [
+      {
+        "titulo": "Menuzinho Agrupador",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 70,
+        "tipoMenu": "MENU_MORTO"
+      },
+      {
+        "titulo": "Submenu I",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 71,
+        "tipoMenu": "MENU_FILHO"
+      },
+      {
+        "titulo": "Submenu II",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 72,
+        "tipoMenu": "MENU_FILHO"
+      },
+      {
+        "titulo": "Submenu III",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 73,
+        "tipoMenu": "MENU_FILHO"
+      },
+      {
+        "titulo": "Menuzinho Agrupador",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 194,
+        "tipoMenu": "MENU_MORTO"
+      },
+      {
+        "titulo": "Submenu I",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 195,
+        "tipoMenu": "MENU_FILHO"
+      },
+      {
+        "titulo": "Menuzinho Agrupador",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 74,
+        "tipoMenu": "MENU_MORTO"
+      },
+      {
+        "titulo": "Submenu I",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 75,
+        "tipoMenu": "MENU_FILHO"
+      },
+      {
+        "titulo": "Submenu II",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 76,
+        "tipoMenu": "MENU_FILHO"
+      },
+      {
+        "titulo": "Menuzinho Agrupador",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 79,
+        "tipoMenu": "MENU_MORTO"
+      },
+      {
+        "titulo": "Submenu I",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 80,
+        "tipoMenu": "MENU_FILHO"
+      },
+      {
+        "titulo": "Submenu II",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 81,
+        "tipoMenu": "MENU_FILHO"
+      },
+      {
+        "titulo": "Menuzinho Agrupador",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 186,
+        "tipoMenu": "MENU_MORTO"
+      },
+      {
+        "titulo": "Submenu I",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 187,
+        "tipoMenu": "MENU_FILHO"
+      }
+    ],
+    "icone": "ic_menu_send",
+    "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+    "idMenu": 69,
+    "tipoMenu": "MENU_PAI"
+  },
+  {
+    "titulo": "Menu V",
+    "items": [
+      {
+        "titulo": "Menuzinho Agrupador",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 214,
+        "tipoMenu": "MENU_MORTO"
+      },
+      {
+        "titulo": "Submenu I",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 215,
+        "tipoMenu": "MENU_FILHO"
+      },
+      {
+        "titulo": "Submenu II",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 216,
+        "tipoMenu": "MENU_FILHO"
+      },
+      {
+        "titulo": "Submenu III",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 219,
+        "tipoMenu": "MENU_FILHO"
+      }
+    ],
+    "icone": "ic_menu_share",
+    "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+    "idMenu": 213,
+    "tipoMenu": "MENU_PAI"
+  },
+  {
+    "titulo": "Menu VI",
+    "items": [
+      {
+        "titulo": "Menuzinho Agrupador",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 83,
+        "tipoMenu": "MENU_MORTO"
+      },
+      {
+        "titulo": "Submenu I",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 151,
+        "tipoMenu": "MENU_FILHO"
+      }
+    ],
+    "icone": "ic_menu_slideshow",
+    "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+    "idMenu": 82,
+    "tipoMenu": "MENU_PAI"
+  },
+  {
+    "titulo": "Menu VII",
+    "items": [
+      {
+        "titulo": "Menuzinho Agrupador",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 179,
+        "tipoMenu": "MENU_MORTO"
+      },
+      {
+        "titulo": "Submenu I",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 209,
+        "tipoMenu": "MENU_FILHO"
+      },
+      {
+        "titulo": "Submenu II",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 180,
+        "tipoMenu": "MENU_FILHO"
+      }
+    ],
+    "icone": "ic_qrcode",
+    "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+    "idMenu": 178,
+    "tipoMenu": "MENU_PAI"
+  },
+  {
+    "titulo": "Menu VIII",
+    "items": [
+      {
+        "titulo": "Menuzinho Agrupador",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 87,
+        "tipoMenu": "MENU_MORTO"
+      },
+      {
+        "titulo": "Submenu I",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 88,
+        "tipoMenu": "MENU_FILHO"
+      },
+      {
+        "titulo": "Submenu II",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 89,
+        "tipoMenu": "MENU_FILHO"
+      },
+      {
+        "titulo": "Menuzinho Agrupador",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 93,
+        "tipoMenu": "MENU_MORTO"
+      },
+      {
+        "titulo": "Submenu I",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 94,
+        "tipoMenu": "MENU_FILHO"
+      },
+      {
+        "titulo": "Submenu II",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 198,
+        "tipoMenu": "MENU_FILHO"
+      },
+      {
+        "titulo": "Menuzinho Agrupador",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 138,
+        "tipoMenu": "MENU_MORTO"
+      },
+      {
+        "titulo": "Submenu I",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 139,
+        "tipoMenu": "MENU_FILHO"
+      }
+    ],
+    "icone": "ic_notificacao",
+    "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+    "idMenu": 86,
+    "tipoMenu": "MENU_PAI"
+  },
+  {
+    "titulo": "Menu IX",
+    "items": [
+      {
+        "titulo": "Menuzinho Agrupador",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 96,
+        "tipoMenu": "MENU_MORTO"
+      },
+      {
+        "titulo": "Submenu I",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 97,
+        "tipoMenu": "MENU_FILHO"
+      },
+      {
+        "titulo": "Submenu II",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 98,
+        "tipoMenu": "MENU_FILHO"
+      },
+      {
+        "titulo": "Menuzinho Agrupador",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 100,
+        "tipoMenu": "MENU_MORTO"
+      },
+      {
+        "titulo": "Submenu I",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 101,
+        "tipoMenu": "MENU_FILHO"
+      }
+    ],
+    "icone": "ic_comentario",
+    "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+    "idMenu": 95,
+    "tipoMenu": "MENU_PAI"
+  },
+  {
+    "titulo": "Menu X",
+    "items": [
+      {
+        "titulo": "Menuzinho Agrupador",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 104,
+        "tipoMenu": "MENU_MORTO"
+      },
+      {
+        "titulo": "Submenu I",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 105,
+        "tipoMenu": "MENU_FILHO"
+      },
+      {
+        "titulo": "Submenu II",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 106,
+        "tipoMenu": "MENU_FILHO"
+      },
+      {
+        "titulo": "Submenu III",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 132,
+        "tipoMenu": "MENU_FILHO"
+      },
+      {
+        "titulo": "Submenu IV",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 107,
+        "tipoMenu": "MENU_FILHO"
+      },
+      {
+        "titulo": "Submenu V",
+        "link": "suaAcaoAqui",
+        "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+        "idMenu": 108,
+        "tipoMenu": "MENU_FILHO"
+      }
+    ],
+    "icone": "ic_hammer",
+    "dataUltAtualizacao": "1970-01-01 00:00:00.0",
+    "idMenu": 103,
+    "tipoMenu": "MENU_PAI"
+  }
+]
