@@ -11,6 +11,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
@@ -63,6 +67,7 @@ public class MainActivity extends AppCompatActivity
     private MenuAdapter menuAdapter;
     private ItemMenuAdapter itemMenuAdapter;
     private List<Menu> menus;
+    private List<Menu> moreUsedMenus;
     private Menu menuSelecionado;
     private boolean isPrimeiroNivelMenuSelecionado = true;
     AppDatabase appDatabase;
@@ -89,6 +94,122 @@ public class MainActivity extends AppCompatActivity
                 onBackPressed();
             }
         });
+        search.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before,
+                                      int count) {
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count,
+                                          int after) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                String query = s.toString();
+                if (isPrimeiroNivelMenuSelecionado && query.trim().isEmpty()) {
+                    mRecyclerView.setAdapter(menuAdapter);
+                    return;
+                }
+                if (isPrimeiroNivelMenuSelecionado) {
+                    mRecyclerView.setAdapter(itemMenuAdapter);
+                }
+                if (itemMenuAdapter != null) {
+                    itemMenuAdapter.filterData(query, menuSelecionado);
+                }
+            }
+        });
+
+        search.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    v.setFocusable(true);
+                }
+            }
+        });
+
+        search.setOnKeyListener(new View.OnKeyListener() {
+
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (keyCode == KeyEvent.KEYCODE_ENTER) {
+                    InputMethodManager inputManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                    inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
+                            InputMethodManager.HIDE_NOT_ALWAYS);
+                }
+                return false;
+            }
+        });
+
+        btReset.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (search != null) {
+                    search.setText("");
+                }
+            }
+        });
+        searchMoreUsedMenus();
+    }
+
+    public void searchMoreUsedMenus() {
+        AppExecutors.getInstance().getDiskIO().execute(new Runnable() {
+            @Override
+            public void run() {
+                moreUsedMenus = appDatabase.menuDAO().getMoreUsed(ID_USUARIO, LIMIT_MORE_USED_MENUS);
+                if (moreUsedMenus != null && !moreUsedMenus.isEmpty()) {
+                    insereMenusMaisUtilizados();
+                    int indexMenu = 0;
+                    for (Menu mU : moreUsedMenus) {
+                        try {
+                            controlaExibicaoIconeNovidade(indexMenu, mU);
+                        } catch (ArrayIndexOutOfBoundsException e) {
+                            Log.e("DisplayList", e.getMessage());
+                        }
+                        indexMenu = 0;
+                    }
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            menuAdapter.setMenus(menus);
+                            itemMenuAdapter.updateMenuFromServer(menus);
+                        }
+                    });
+                }
+            }
+        });
+    }
+
+    private void insereMenusMaisUtilizados() {
+        for (int i = moreUsedMenus.size() - 1; i >= 0; i--) {
+            Menu menu = moreUsedMenus.get(i);
+            menu.setTipoMenu(Menu.TipoMenu.MENU_FILHO);
+            menus.add(0, menu);
+        }
+        Menu m = new Menu(getString(R.string.menu_mais_utilizados), Menu.TipoMenu.MENU_MORTO);
+        m.setIcone("icone_mais_acessados");
+        m.setIdMenu(Menu.ID_MAIS_UTILIZADOS);
+        menus.add(0, m);
+    }
+
+    private int controlaExibicaoIconeNovidade(int indexMenu, Menu mU) throws ArrayIndexOutOfBoundsException {
+        if (indexMenu == menus.size()) {
+            return indexMenu;
+        }
+        if (menus.get(indexMenu).getItems() == null || menus.get(indexMenu).getItems().isEmpty()) {
+            return controlaExibicaoIconeNovidade(++indexMenu, mU);
+        }
+
+        for (Menu m : menus.get(indexMenu).getItems()) {
+            if (mU.getLink().equals(m.getLink())) {
+                m.setDataVisualizacao(mU.getDataVisualizacao());
+            }
+        }
+        return controlaExibicaoIconeNovidade(++indexMenu, mU);
     }
 
     /**

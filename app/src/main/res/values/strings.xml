@@ -19,4 +19,5 @@
     <string name="description_user_user">Imagem do usuário</string>
     <string name="description_menu_conta">Menu da conta</string>
     <string name="description_item_menu_conta">Submenu da conta</string>
+    <string name="menu_mais_utilizados">Mais utilizados</string>
 </resources>
