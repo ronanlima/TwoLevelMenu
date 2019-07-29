@@ -1,9 +1,10 @@
-package br.com.ronanlima.twolevelmenu;
+package br.com.ronanlima.twolevelmenu.view;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -33,6 +34,8 @@ import java.io.IOException;
 import java.util.Calendar;
 import java.util.List;
 
+import br.com.ronanlima.twolevelmenu.AppExecutors;
+import br.com.ronanlima.twolevelmenu.R;
 import br.com.ronanlima.twolevelmenu.adapter.ItemMenuAdapter;
 import br.com.ronanlima.twolevelmenu.adapter.MenuAdapter;
 import br.com.ronanlima.twolevelmenu.database.AppDatabase;
@@ -78,7 +81,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         appDatabase = AppDatabase.getInstance(this);
-
+        inflateFragment(null);
         setSupportActionBar(toolbar);
         menuAdapter = new MenuAdapter(this);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -297,14 +300,22 @@ public class MainActivity extends AppCompatActivity
         hideKeyboard();
         if (menu.getLink() != null
                 && !"".equalsIgnoreCase(menu.getLink())) {
-            Intent i = new Intent(this, SecondActivity.class);
             Bundle b = new Bundle();
             b.putString("item_selected", menu.getTitulo());
-            i.putExtras(b);
-            startActivity(i);
+            inflateFragment(b);
             drawer.closeDrawer(GravityCompat.START);
             updateClickMenu(menu);
         }
+    }
+
+    private void inflateFragment(Bundle bundle) {
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        MenuFragment menuFragment = new MenuFragment();
+        if (bundle != null) {
+            menuFragment.setArguments(bundle);
+        }
+        ft.replace(R.id.fragment_container, menuFragment).commit();
     }
 
     /**
