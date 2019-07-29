@@ -11,6 +11,6 @@ Following, the images off menu generated
 ![](/images/Screenshot_4.png)
 
 # Prototype
-[Paulo Washington](https://www.behance.net/paulowashington)
+Made by [Paulo Washington](https://www.behance.net/paulowashington)
 
 Enjoy! :)
